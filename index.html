@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Typeof</title>
 </head>
+
 <body>
+
+    <div class='add-image-form'>
+        <input id='posX' placeholder="posX...">
+        <input id='posY'  placeholder="posY...">
+        <input id='width'  placeholder="width...">
+        <input id='height'  placeholder="height...">
+        <input id='className'  placeholder="className...">
+        <input id='imgPath'  placeholder="img path...">
+        <button class='add-image'>add image</button>
+    </div>
+    <span>aspect ratio</span><input id='aspectRatio' type="checkbox" value='false'>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .image {
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            Pointer-events: none;
+        }
+
+        .right-bottom-resize {
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            width: 10%;
+            height: 10%;
+            border: 1px solid #000;
+        }
+        .right-resize {
+            position: absolute;
+            bottom: 50%;
+            right: 0%;
+            width: 10%;
+            height: 10%;
+            border: 1px solid #000;
+        }
+        .bottom-resize {
+            position: absolute;
+            bottom: 0%;
+            right: 50%;
+            width: 10%;
+            height: 10%;
+            border: 1px solid #000;
+        }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src='js/main.js'></script>
 </body>
+
 </html>
