@@ -14,6 +14,10 @@ class Image {
         this.resizeRightBottom = document.createElement('span'),
         this.resizeRight = document.createElement('span'),
         this.resizeBottom = document.createElement('span'),
+        this.settings = document.createElement('div'),
+        this.setting = document.createElement('div'),
+        this.copy = document.createElement('div'),
+        this.delete = document.createElement('div'),
         this.img = img,
         this.move = false,
         this.resizeRightBottomDown = false,
@@ -30,6 +34,8 @@ class Image {
             padding: 1vh;
             width: ${this.width}px;
             height: ${this.height}px;
+            min-width: 100px;
+            min-height: 100px;
             top: ${this.y}px;
             left: ${this.x}px;
             border: 1px solid #000;
@@ -45,7 +51,27 @@ class Image {
         this.resizeRight.className = 'right-resize';
         this.image.append(this.resizeBottom);
         this.resizeBottom.className = 'bottom-resize';
-        
+        this.image.append(this.settings);
+        this.settings.className = 'settings';
+        this.settings.append(this.setting);
+        this.setting.className = 'setting';
+        this.settings.append(this.copy);
+        this.copy.className = 'copy';
+        this.settings.append(this.delete);
+        this.delete.className = 'delete';
+        this.setting.innerHTML = `<i class="fas fa-cog"></i>`;
+        this.copy.innerHTML = `<i class="fas fa-copy"></i>`;
+        this.delete.innerHTML = `<i class="fas fa-trash"></i>`;
+
+        this.setting.addEventListener('click', () => {
+            console.log('setting');
+        });
+        this.copy.addEventListener('click', () => {
+            console.log('copy');
+        });
+        this.delete.addEventListener('click', () => {
+            console.log('delete');
+        });
 
         this.moveElement();
         this.resizeElement();
@@ -133,7 +159,7 @@ addImageBtn.addEventListener('click', () => {
             inputWidth.value,
             inputHeight.value,
             inputClassName.value,
-            inputImgPath.value
+            'https://assets.webiconspng.com/uploads/2017/09/Pokemon-PNG-Image-74059.png'
         )
     );
     images[images.length-1].addElement();
